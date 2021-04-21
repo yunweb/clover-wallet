@@ -2,9 +2,9 @@
 import { ApiPromise, WsProvider } from '@polkadot/api';
 import { typesBundleForPolkadot as acalaTypes } from '@acala-network/type-definitions';
 import { setChain } from './chain';
-import { ACALA_NETWORK, CLOVER_NETWORK } from '../../lib/constants/networks';
-import { cloverTypes } from './core-clover/clover-types';
-import { cloverRpc } from './core-clover/clover-rpc';
+import { ACALA_NETWORK, FUSOTAO_NETWORK } from '../../lib/constants/networks';
+import { walletTypes } from './core-fuso/types';
+import { fusoRpc } from './core-fuso/rpc';
 
 const connection = {
   isError: false,
@@ -53,11 +53,11 @@ const connect = network => {
                 provider,
                 types: acaTypes.types,
               });
-            } else if (value === CLOVER_NETWORK.value) {
+            } else if (value === FUSOTAO_NETWORK.value) {
               apiPromise = ApiPromise.create({
                 provider,
-                types: cloverTypes,
-                rpc: cloverRpc,
+                types: walletTypes,
+                rpc: fusoRpc,
               });
             } else {
               apiPromise = ApiPromise.create({ provider });

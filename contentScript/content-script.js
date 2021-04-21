@@ -13,5 +13,5 @@ if (process.env.NODE_ENV === 'production') {
   const url = extension.extension.getURL('js/inPageScript.bundle.js');
   injectScript(url);
 } else {
-  injectScript('https://localhost:3000/js/inPageScript.bundle.js');
+  injectScript('https://localhost:3001/js/inPageScript.bundle.js');
 }

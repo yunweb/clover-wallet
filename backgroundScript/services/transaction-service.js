@@ -13,7 +13,7 @@ import { convertUnit } from './unit-converter';
 import { getBaseUnit } from '../apis/chain';
 import {
   KUSAMA_NETWORK,
-  CLOVER_NETWORK,
+  FUSOTAO_NETWORK,
   ACALA_NETWORK,
   POLKADOT_NETWORK,
 } from '../../lib/constants/networks';
@@ -50,8 +50,8 @@ export const isValidTxnAmount = (balance, totalAmount, network) => {
   if (network.value === POLKADOT_NETWORK.value) {
     return balance.gt(new BN(Transaction.MINIMUM_BALANCE)) && balance.gt(totalAmount);
   }
-  if (network.value === CLOVER_NETWORK.value) {
-    return balance.gt(new BN(Transaction.CLOVER_MINIMUM_BALANCE)) && balance.gt(totalAmount);
+  if (network.value === FUSOTAO_NETWORK.value) {
+    return balance.gt(new BN(Transaction.FUSOTAO_MINIMUM_BALANCE)) && balance.gt(totalAmount);
   }
   return balance.gt(totalAmount);
 };
@@ -96,7 +96,7 @@ export const getTransactionFees = async (txnType, senderAddress, toAddress, tran
 export const sendOSNotification = async transaction => {
   const { message } = createTransactionToastMessage(transaction);
   const txnDetailURl = `${transaction.internal.network.transactionUrl}/${transaction.txnHash}`;
-  await Notification.createNotification('CLOVER', message, txnDetailURl);
+  await Notification.createNotification('FUSOTAO', message, txnDetailURl);
 };
 
 export const updateTransactionState = async (transaction, txnHash, txnStatus) => {

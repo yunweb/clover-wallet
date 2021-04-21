@@ -4,20 +4,20 @@ import * as SignInActionTypes from './action-types';
 import * as APIConstants from '../../../lib/constants/api';
 import { updateAppLoading } from '../../containers/actions';
 
-const unlockCloverSuccess = () => ({
-  type: SignInActionTypes.UNLOCK_CLOVER_SUCCESS,
+const unlockWalletSuccess = () => ({
+  type: SignInActionTypes.UNLOCK_WALLET_SUCCESS,
 });
 
-const unlockCloverError = error => ({
-  type: SignInActionTypes.UNLOCK_CLOVER_ERROR,
+const unlockWalletError = error => ({
+  type: SignInActionTypes.UNLOCK_WALLET_ERROR,
   error,
 });
 
-export const unlockClover = password => async dispatch => {
+export const unlockWallet = password => async dispatch => {
   try {
     dispatch(updateAppLoading(true));
     await APITypes.OnBoarding.setHashKey(keccak512(password));
-    dispatch(unlockCloverSuccess());
+    dispatch(unlockWalletSuccess());
   } catch (e) {
     dispatch(updateAppLoading(false));
     const error = {
@@ -30,6 +30,6 @@ export const unlockClover = password => async dispatch => {
         break;
       default:
     }
-    dispatch(unlockCloverError(error));
+    dispatch(unlockWalletError(error));
   }
 };

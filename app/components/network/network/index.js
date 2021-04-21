@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CloverMenu from '../../common/clover-menu';
+import FusoMenu from '../../common/menu';
 import FontRegular from '../../common/fonts/font-regular';
 // import { DISABLE_NETWORKS_PAGES_GROUP } from '../../../constants/navigation';
 import { shortenName } from '../../../services/wallet-service';
@@ -35,7 +35,7 @@ export default class Network extends Component {
           text={`${shortenName(network.text)} chain`}
           onClick={onNetworkClick}
         />
-        <CloverMenu
+        <FusoMenu
           selected={network}
           options={networks}
           onChange={onNetworkChange}

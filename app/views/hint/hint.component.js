@@ -7,7 +7,7 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import NoScreenShot from '../../images/no_screen_shot.svg';
 import { styles } from './styles';
 
-class CloverRadioButtonGroup extends Component {
+class RadioButtonGroup extends Component {
   render() {
     const {
       classes, isOpen, handleClose, handleYes
@@ -64,4 +64,4 @@ class CloverRadioButtonGroup extends Component {
   }
 }
 
-export default withStyles(styles)(CloverRadioButtonGroup);
+export default withStyles(styles)(RadioButtonGroup);

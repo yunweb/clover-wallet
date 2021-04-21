@@ -28,7 +28,7 @@ function loadScript(name, tabId, cb) {
     );
   } else {
     // dev: async fetch bundle
-    fetch(`https://localhost:3000/js/${name}.bundle.js`)
+    fetch(`https://localhost:3001/js/${name}.bundle.js`)
       .then(res => res.text())
       .then(fetchRes => {
         extension.tabs.executeScript(

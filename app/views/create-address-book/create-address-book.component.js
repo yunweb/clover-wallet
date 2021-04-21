@@ -4,9 +4,9 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import DarkDivider from '../../components/common/divider/dark-divider';
 import CreateContactForm from '../../components/address-book/create-contact-form';
-import CloverValidator from '../../utils/clover-validator';
+import FusoValidator from '../../utils/fuso-validator';
 import { DASHBOARD_PAGE } from '../../constants/navigation';
-import validator from '../../utils/clover-validator/validator';
+import validator from '../../utils/fuso-validator/validator';
 import './styles.css';
 import { findChainByName } from '../../../lib/constants/chain';
 import HeaderBack from '../../components/header-back';
@@ -37,8 +37,8 @@ export default class CreateAddressBook extends Component {
       network: '',
       showCurrencySelect: false,
     };
-    this.lnameValidator = new CloverValidator(validator.lnameValidation);
-    this.fnameValidator = new CloverValidator(validator.fnameValidation);
+    this.lnameValidator = new FusoValidator(validator.lnameValidation);
+    this.fnameValidator = new FusoValidator(validator.fnameValidation);
     this.addressInputRef = React.createRef();
     this.fnameInputRef = React.createRef();
     this.lnameInputRef = React.createRef();
@@ -247,7 +247,7 @@ export default class CreateAddressBook extends Component {
                 <div className="select-asset-title">select Chains</div>
                 <List>
                   {networks.map((nt, index) => (
-                    <div>
+                    <div key="index">
                       <DarkDivider />
                       <ListItem
                         button

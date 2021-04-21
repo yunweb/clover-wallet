@@ -1,4 +1,4 @@
-import * as ClvWallet from '../apis/core-clover/clover-wallet';
+import * as ClvWallet from '../apis/core-fuso/wallet';
 import * as KsmWallet from '../apis/core-kusama/ksm-wallet';
 import * as AcaWallet from '../apis/core-acala/acala-wallet';
 import * as DotWallet from '../apis/core-polkadot/dot-wallet';
@@ -7,7 +7,7 @@ import * as CustomWallet from '../apis/core-custom/custom-wallet';
 import { getCurrentNetwork } from './network-service';
 import {
   KUSAMA_NETWORK,
-  CLOVER_NETWORK,
+  FUSOTAO_NETWORK,
   ACALA_NETWORK,
   POLKADOT_NETWORK,
 } from '../../lib/constants/networks';
@@ -17,7 +17,7 @@ export const getWallet = () => {
   switch (currentNetwork.value) {
     case KUSAMA_NETWORK.value:
       return KsmWallet;
-    case CLOVER_NETWORK.value:
+    case FUSOTAO_NETWORK.value:
       return ClvWallet;
     case ACALA_NETWORK.value:
       return AcaWallet;
@@ -34,7 +34,7 @@ export const getWallets = () => [
     wallet: KsmWallet,
   },
   {
-    symbol: CLOVER_NETWORK.unit,
+    symbol: FUSOTAO_NETWORK.unit,
     wallet: ClvWallet,
   },
   {
@@ -51,7 +51,7 @@ export const getWalletByChain = chain => {
   switch (chain) {
     case KUSAMA_NETWORK.text:
       return KsmWallet;
-    case CLOVER_NETWORK.text:
+    case FUSOTAO_NETWORK.text:
       return ClvWallet;
     case ACALA_NETWORK.text:
       return AcaWallet;

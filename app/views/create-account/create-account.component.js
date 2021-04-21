@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
-import CloverValidator from '../../utils/clover-validator';
-import validator from '../../utils/clover-validator/validator';
+import FusoValidator from '../../utils/fuso-validator';
+import validator from '../../utils/fuso-validator/validator';
 import CreateAccountForm from '../../components/account/create-account-form';
-import CloverTabs from '../../components/common/clover-tabs';
+import FusoTabs from '../../components/common/tabs';
 import { MANAGE_ACCOUNT_PAGE } from '../../constants/navigation';
 import CreateAccountSettings from '../../components/account/create-account-settings';
 import FooterButton from '../../components/common/footer-button';
@@ -33,7 +33,7 @@ export default class CreateAccount extends Component {
       confirmSeedPhraseInputName: 'confirmSeedPhrase',
       openModal: true,
     };
-    this.validator = new CloverValidator(validator.importSeedPhraseValidation);
+    this.validator = new FusoValidator(validator.importSeedPhraseValidation);
     this.seedInput = React.createRef();
     this.confirmSeedInput = React.createRef();
   }
@@ -235,7 +235,7 @@ export default class CreateAccount extends Component {
           handleClose={this.handleClose}
           handleYes={this.handleClose}
         />
-        <CloverTabs value={value} onChange={this.handleChange} labels={labels} />
+        <FusoTabs value={value} onChange={this.handleChange} labels={labels} />
         <CreateAccountForm
           value={formValue}
           generatedSeedWords={seedWords}

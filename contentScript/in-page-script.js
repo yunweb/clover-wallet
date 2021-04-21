@@ -61,7 +61,7 @@ injectExtension(enable, {
   name: AppConfig.name,
   version: AppConfig.version,
 });
-class CloverWalletProvider extends EventEmitter {
+class FusoWalletProvider extends EventEmitter {
   constructor() {
     super();
     this.request = this.request.bind(this);
@@ -82,15 +82,16 @@ class CloverWalletProvider extends EventEmitter {
     if (typeof methodOrPayload === 'object' && typeof callbackOrArgs === 'function') {
       try {
         const result = await resolveRequest(RequestTypes.WEB3_REQUEST, methodOrPayload, metadata);
-        if ('eth_getTransactionReceipt' === methodOrPayload.method) {
-          let r = result.result
-          r._sta = r.status
-          if (r.status === true) {
-            r.status = '0x1'
+        if (methodOrPayload.method === 'eth_getTransactionReceipt') {
+          const r = result.result;
+          // eslint-disable-next-line no-underscore-dangle
+          r._sta = r.status;
+          if (r.status) {
+            r.status = '0x1';
           } else {
-            r.status = '0x0'
+            r.status = '0x0';
           }
-          
+
           // console.log('result:', JSON.stringify(result))
         }
         callbackOrArgs(undefined, result);
@@ -98,11 +99,11 @@ class CloverWalletProvider extends EventEmitter {
         callbackOrArgs(e, undefined);
       }
     } else {
-      return this._sendSync(methodOrPayload);
+      return this.sendSync(methodOrPayload);
     }
   }
 
-  _sendSync(payload) {
+  sendSync(payload) {
     let result;
     switch (payload.method) {
       case 'eth_accounts':
@@ -133,7 +134,7 @@ class CloverWalletProvider extends EventEmitter {
     };
   }
 }
-window.ethereum = new Proxy(new CloverWalletProvider(), {
+window.ethereum = new Proxy(new FusoWalletProvider(), {
   // some common libraries, e.g. web3@1.x, mess with our API
   deleteProperty: () => true,
 });

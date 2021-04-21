@@ -1,4 +1,4 @@
-import { CLOVER_UPDATE_TIME } from '../../lib/constants/update';
+import { FUSOTAO_UPDATE_TIME } from '../../lib/constants/update';
 import { Transaction, Network } from '../api';
 import { SUCCESS, FAIL } from '../../lib/constants/transaction';
 import { getTransactions, updateTransactions } from '../views/dashboard/actions';
@@ -77,5 +77,5 @@ export async function updateApplicationState(store) {
   await updateApplicationStateHelper(store);
   setInterval(async () => {
     await updateApplicationStateHelper(store);
-  }, CLOVER_UPDATE_TIME);
+  }, FUSOTAO_UPDATE_TIME);
 }

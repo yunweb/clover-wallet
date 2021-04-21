@@ -1,7 +1,7 @@
 {
-  "name": "Clover",
-  "version": "0.5.6",
-  "description": "Clover - polkadot web extension wallet",
+  "name": "fusotao-wallet",
+  "version": "0.0.1",
+  "description": "fusotao-wallet - polkadot web extension wallet",
   "scripts": {
     "dev": "node scripts/dev",
     "dev-firefox": "node scripts/dev --firefox",
