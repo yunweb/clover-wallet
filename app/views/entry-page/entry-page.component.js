@@ -51,21 +51,21 @@ export default class EntryPage extends Component {
         <div className={showPage === 3 ? 'entry-container' : 'hide-container'}>
           <img className="full-width" src={EntryImg} alt="" />
           <div className="entry-content">
-            <div className="entry-item">
+            <div className="entry-item" onClick={this.handleCreateWallet}>
               <div>
                 <span>Create A New Wallet.</span>
                 <span>CREATE ACCOUNT</span>
               </div>
-              <div onClick={this.handleCreateWallet}>
+              <div>
                 <img width={38} height={38} src={EntryArrow} alt="" />
               </div>
             </div>
-            <div className="entry-item">
+            <div className="entry-item" onClick={this.handleImportWallet}>
               <div>
                 <span>Import A Wallet.</span>
                 <span>IMPORT ACCOUNT</span>
               </div>
-              <div onClick={this.handleImportWallet}>
+              <div>
                 <img width={38} height={38} src={EntryArrow} alt="" />
               </div>
             </div>

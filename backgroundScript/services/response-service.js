@@ -55,8 +55,9 @@ export const setHashKey = async (request, sendResponse) => {
   try {
     const { data } = request;
     const hashKey = await AppService.appReady(data);
-    if (hashKey !== undefined);
-    sendResponse({ ...success, message: 'Password created' });
+    if (hashKey !== undefined) {
+      sendResponse({ ...success, message: 'Password created' });
+    }
   } catch (err) {
     sendResponse({ ...failure, message: 'Error setting password' });
   }

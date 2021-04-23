@@ -25,15 +25,6 @@ window.addEventListener('message', async event => {
           TransceiverService.signMessage(data);
           break;
         case RequestTypes.WEB3_REQUEST:
-          const { data } = event;
-          if (
-            !['eth_getBalance', 'eth_accounts', 'net_version', 'eth_getBlockByNumber'].includes(
-              data.opts.method,
-            )
-          ) {
-            console.log('cs:', data);
-          }
-
           try {
             if (
               RequestTypes.SAFE_METHODS.includes(data.opts.method)
@@ -59,7 +50,6 @@ window.addEventListener('message', async event => {
 });
 
 extension.runtime.onMessage.addListener(response => {
-  console.log('content on message:', response);
   const { type } = response;
   switch (type) {
     case ResponseType.BG_DAPP_RESPONSE:

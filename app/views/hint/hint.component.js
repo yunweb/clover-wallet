@@ -18,7 +18,7 @@ class RadioButtonGroup extends Component {
           root: classes.root,
           paper: classes.paper,
         }}
-        disableBackdropClick="true"
+        disableBackdropClick
         open={isOpen}
         onClose={handleClose}
       >
