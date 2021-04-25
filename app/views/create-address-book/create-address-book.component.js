@@ -247,7 +247,7 @@ export default class CreateAddressBook extends Component {
                 <div className="select-asset-title">select Chains</div>
                 <List>
                   {networks.map((nt, index) => (
-                    <div key="index">
+                    <div key={index.toString()}>
                       <DarkDivider />
                       <ListItem
                         button

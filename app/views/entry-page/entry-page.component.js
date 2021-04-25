@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './styles.css';
 import Logo from '../../images/logo.svg';
-import FusoLogo from '../../images/clover_logo.svg';
+import FusoLogo from '../../images/fusotao.svg';
 import Splash from '../../images/splash.svg';
-import FusoBanner from '../../images/clover_banner.svg';
+import FusoBanner from '../../images/fuso_banner.svg';
 import EntryImg from '../../images/entry_img.svg';
 import EntryArrow from '../../images/entry_arrow.svg';
 import { CREATE_ACCOUNT_PAGE, IMPORT_WALLET_PAGE } from '../../constants/navigation';

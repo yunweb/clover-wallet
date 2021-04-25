@@ -15,7 +15,7 @@ class ButtonCustom extends Component {
 
   render() {
     const { ...otherProps } = this.props;
-    const ButtonCustom = styled(Button)`
+    const ButtonCustomDom = styled(Button)`
       font-size: 14px;
       font-family: 'Inter-Bold';
       font-style: normal;
@@ -29,9 +29,13 @@ class ButtonCustom extends Component {
     `;
     return (
       <div>
-        <ButtonCustom disabled={this.props.disabled} onClick={this.props.onClick} {...otherProps}>
+        <ButtonCustomDom
+          disabled={this.props.disabled}
+          onClick={this.props.onClick}
+          {...otherProps}
+        >
           {this.props.children}
-        </ButtonCustom>
+        </ButtonCustomDom>
       </div>
     );
   }

@@ -27,7 +27,7 @@ export default class FooterWithTwoButton extends Component {
         <ButtonCustom
           onClick={onBackClick}
           width="155px"
-          color="#41485D"
+          color="primary"
           background="white"
           border="1px solid rgba(65, 72, 93, 0.5);"
         >

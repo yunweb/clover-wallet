@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Banner from '../../../images/clover_banner.svg';
+import Banner from '../../../images/fuso_banner.svg';
 
 export default class FusoBanner extends Component {
   render() {

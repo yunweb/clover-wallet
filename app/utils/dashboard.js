@@ -1,4 +1,4 @@
-import TAO from '../images/clover.svg';
+import TAO from '../images/tao.svg';
 import CETH from '../images/ceth.svg';
 import CUSDT from '../images/cusdt.svg';
 import KSM from '../images/kusama.svg';

@@ -94,7 +94,7 @@ export default class Trade extends Component {
               >
                 <ButtonCustom
                   width="100px"
-                  color="#41485D"
+                  color="primary"
                   background="white"
                   onClick={() => {}}
                   border="1px solid rgba(65, 72, 93, 0.5);"

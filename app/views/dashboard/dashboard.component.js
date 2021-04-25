@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import Wallet from '../../components/wallet';
 import { TRADE_PAGE } from '../../constants/navigation';
 import { copyAccountMessage } from '../../../lib/services/static-message-factory-service';
@@ -118,14 +118,6 @@ export default class Dashboard extends Component {
               key={`chain_assets_${idx.toString()}}`}
             />
           ))}
-        </div>
-        <div className="dashboard-button-wrap">
-          <Button onClick={this.goToApps} className="assets-btn" style={{ marginRight: '10px' }}>
-            DAPPS
-          </Button>
-          <Button onClick={this.goToApps} className="assets-btn">
-            ASSETS
-          </Button>
         </div>
       </div>
     );

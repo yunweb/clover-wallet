@@ -61,7 +61,7 @@ export default class SignIn extends Component {
     } = this.state;
     const FusoTooltip = withStyles(() => ({
       tooltip: {
-        backgroundColor: '#41485D',
+        backgroundColor: 'primary',
         color: 'white',
         maxWidth: 220,
         fontSize: '10px',

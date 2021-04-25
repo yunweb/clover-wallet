@@ -13,7 +13,7 @@ const Chain = {
   baseUnit: units[0],
   tokenSymbol: '',
   ss58Format: 42,
-  tokenDecimals: 12,
+  tokenDecimals: 18,
   metadata: undefined,
   api: undefined,
 };
