@@ -6,8 +6,8 @@ import { copyAccountMessage } from '../../../lib/services/static-message-factory
 import './styles.css';
 import { RENAME } from '../../constants/options';
 import { findChainByName } from '../../../lib/constants/chain';
-import Governance from '../../images/governance_icon.svg';
-import Staking from '../../images/staking_icon.svg';
+// import Governance from '../../images/governance_icon.svg';
+// import Staking from '../../images/staking_icon.svg';
 import ArrowRight from '../../images/arrow_right.svg';
 import { getCurrencyIcon } from '../../utils/dashboard';
 
@@ -85,7 +85,7 @@ export default class Dashboard extends Component {
           accountMenu={accountMenu}
           onAccountMenuOptionsChange={this.handleAccountMenuOptionsChange}
         />
-        <div className="staking-gov-btn-container">
+        {/* <div className="staking-gov-btn-container">
           <Button variant="contained" className="staking-btn">
             <img
               width="22"
@@ -108,7 +108,7 @@ export default class Dashboard extends Component {
             />
             GOVERNANCE
           </Button>
-        </div>
+        </div> */}
         <div className="assets-list-wrap">
           <h3 className="assets-list-title">Assets</h3>
           {assetsList.map((asset, idx) => (

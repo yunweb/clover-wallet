@@ -11,8 +11,7 @@ export const onBoard = () => async dispatch => {
     const { isAgree } = await dispatch(verifyTermsVersion());
     if (!isAgree) {
       dispatch(AppActions.updateAppLoading(false));
-      dispatch(AppActions.changePage(NavConstants.ENTRY_PAGE));
-      // dispatch(AppActions.changePage(NavConstants.TERMS_PAGE));
+      dispatch(AppActions.changePage(NavConstants.TERMS_PAGE));
     } else {
       await dispatch(AccountActions.fetchAndSetAccounts);
       const { result } = await OnBoarding.getIsAppOnBoarded();

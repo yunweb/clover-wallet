@@ -24,7 +24,7 @@ export const getAddress = (seedWords, keypairType) => {
 
 export const createSeedWords = () => mnemonicGenerate();
 
-export const valueFormatter = (value, token = 'CLV') => {
+export const valueFormatter = (value, token = 'TAO') => {
   try {
     formatBalance.setDefaults({ unit: token });
     const fBalance = formatBalance(value, true, 12);
@@ -55,11 +55,11 @@ export const getBalance = async address => {
       const balance = info[1].toString();
       formatBalance.setDefaults({ unit: token });
       const balanceFormatted = formatBalance(balance, true, 12);
-      const clvBalance = formatBalance(balance, { forceUnit: token, withSi: true }, 12);
+      const taoBalance = formatBalance(balance, { forceUnit: token, withSi: true }, 12);
       return {
         token,
         balance: balance.toString(),
-        amount: clvBalance.replace(` ${token}`, ''),
+        amount: taoBalance.replace(` ${token}`, ''),
         marketData: '0',
         balanceFormatted,
       };
@@ -75,7 +75,7 @@ export const getBalance = async address => {
       address,
       tokens: [
         {
-          token: 'CLV',
+          token: 'TAO',
           balance: '0',
           amount: '0',
           marketData: '0',

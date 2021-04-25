@@ -43,6 +43,12 @@ export default class SignIn extends Component {
     });
   };
 
+  handleOnEnterKeyPress = e => {
+    if (e.key === 'Enter') {
+      this.handleClick();
+    }
+  };
+
   handleClick = () => {
     const { unlockWallet } = this.props;
     const { password } = this.state;
@@ -64,9 +70,6 @@ export default class SignIn extends Component {
         fontFamily: 'Inter-Regular',
         marginTop: '5px',
       },
-      arrow: {
-        color: '#f5f5f9',
-      },
     }))(Tooltip);
     return (
       <div>
@@ -79,6 +82,7 @@ export default class SignIn extends Component {
             isError={isError}
             password={password}
             placeholder="Password"
+            onKeyPress={this.handleOnEnterKeyPress}
             label={label}
           />
           <div className="msg-container">

@@ -1,4 +1,4 @@
-import * as ClvWallet from '../apis/core-fuso/wallet';
+import * as FusoWallet from '../apis/core-fuso/wallet';
 import * as KsmWallet from '../apis/core-kusama/ksm-wallet';
 import * as AcaWallet from '../apis/core-acala/acala-wallet';
 import * as DotWallet from '../apis/core-polkadot/dot-wallet';
@@ -18,7 +18,7 @@ export const getWallet = () => {
     case KUSAMA_NETWORK.value:
       return KsmWallet;
     case FUSOTAO_NETWORK.value:
-      return ClvWallet;
+      return FusoWallet;
     case ACALA_NETWORK.value:
       return AcaWallet;
     case POLKADOT_NETWORK.value:
@@ -35,7 +35,7 @@ export const getWallets = () => [
   },
   {
     symbol: FUSOTAO_NETWORK.unit,
-    wallet: ClvWallet,
+    wallet: FusoWallet,
   },
   {
     symbol: ACALA_NETWORK.unit,
@@ -52,7 +52,7 @@ export const getWalletByChain = chain => {
     case KUSAMA_NETWORK.text:
       return KsmWallet;
     case FUSOTAO_NETWORK.text:
-      return ClvWallet;
+      return FusoWallet;
     case ACALA_NETWORK.text:
       return AcaWallet;
     case POLKADOT_NETWORK.text:

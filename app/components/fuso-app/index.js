@@ -82,7 +82,7 @@ export default class FusoApp extends Component {
               <Network
                 networks={networks}
                 network={network}
-                onNetworkClick={onNetworkClick}
+                // onNetworkClick={onNetworkClick}
                 onNetworkChange={onNetworkChange}
                 className={FusoNetworkClassNames}
                 page={page}

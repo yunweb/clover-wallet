@@ -41,7 +41,6 @@ export default class AccountDetails extends Component {
               notchedOutline: 'card-input-focused',
             }}
             onKeyPress={onAliasInputKeyPress}
-            withWhiteColor
           />
         )}
         <CopyToClipboard text={address} onCopy={onCopyAddress}>

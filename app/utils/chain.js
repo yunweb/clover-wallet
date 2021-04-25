@@ -1,6 +1,6 @@
-import CLV from '../images/clover.svg';
-import CLV_OFF from '../images/clover_off.svg';
-import CLV_CARD from '../images/clover_card.svg';
+import TAO from '../images/clover.svg';
+import TAO_OFF from '../images/clover_off.svg';
+import TAO_CARD from '../images/clover_card.svg';
 import KSM from '../images/kusama.svg';
 import KSM_OFF from '../images/kusama_off.svg';
 import KSM_CARD from '../images/kusama_card.svg';
@@ -14,8 +14,8 @@ import ALL from '../images/all.svg';
 import ALL_OFF from '../images/all_off.svg';
 
 export function getChainLogo(symbol, on = true) {
-  if (symbol === 'CLV') {
-    return on ? CLV : CLV_OFF;
+  if (symbol === 'TAO') {
+    return on ? TAO : TAO_OFF;
   }
   if (symbol === 'KSM') {
     return on ? KSM : KSM_OFF;
@@ -32,10 +32,10 @@ export function getChainLogo(symbol, on = true) {
 }
 
 export function getChainCardStyle(symbol) {
-  if (symbol === 'CLV') {
+  if (symbol === 'TAO') {
     return {
       background: 'linear-gradient(94.54deg, #FF8212 0%, #ED4454 100%)',
-      img: CLV_CARD,
+      img: TAO_CARD,
     };
   }
   if (symbol === 'KSM') {
