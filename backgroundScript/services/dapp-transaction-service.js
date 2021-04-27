@@ -15,12 +15,12 @@ export const PERIOD = 10;
 
 //Original Source: https://github.com/polkadot-js/extension
 //Original Author: Jaco Greeff
-const decodeMethod = (data, isDecoded, chain) => {
+const decodeMethod = (data, isDecoded, chain, sVersion) => {
   let json = null;
   let method = null;
 
   try {
-    if (isDecoded && chain.specVersion) {
+    if (isDecoded && sVersion) {
       const metaCalls = getMetaCalls();
       if (metaCalls) {
         // eslint-disable-next-line no-unused-vars

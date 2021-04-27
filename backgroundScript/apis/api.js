@@ -4,7 +4,7 @@ import { typesBundleForPolkadot as acalaTypes } from '@acala-network/type-defini
 import { setChain } from './chain';
 import { ACALA_NETWORK, FUSOTAO_NETWORK } from '../../lib/constants/networks';
 import { walletTypes } from './core-fuso/types';
-import { fusoRpc } from './core-fuso/rpc';
+// import { fusoRpc } from './core-fuso/rpc';
 
 const connection = {
   isError: false,
@@ -57,7 +57,6 @@ const connect = network => {
               apiPromise = ApiPromise.create({
                 provider,
                 types: walletTypes,
-                rpc: fusoRpc,
               });
             } else {
               apiPromise = ApiPromise.create({ provider });

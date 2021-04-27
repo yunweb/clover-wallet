@@ -57,14 +57,7 @@ export default class Dashboard extends Component {
   };
 
   render() {
-    const {
-      accounts,
-      account,
-      balances,
-      balance: { balanceFormatted },
-      network,
-      accountMenu,
-    } = this.props;
+    const { account, network, accountMenu } = this.props;
     const assetsList = this.props.balance.tokens ? this.props.balance.tokens : [];
     const chain = findChainByName(network.value);
     const theme = chain.icon || 'polkadot';
@@ -73,9 +66,6 @@ export default class Dashboard extends Component {
         <Wallet
           className="wallet-container"
           inputRef={this.textInput}
-          accounts={accounts}
-          balances={balances}
-          balance={balanceFormatted}
           selectedAccount={account}
           theme={theme}
           onAliasChange={this.handleAliasChange}

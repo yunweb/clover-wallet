@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import FusoContainer from '../fuso-container';
 import Header from '../common/header/header.component';
 import ViewSelector from '../view-selector';
-import Network from '../network/network';
+// import Network from '../network/network';
 import Options from '../options';
 import FusoBanner from '../common/banner';
 import FusoLogo from '../common/logo';
@@ -47,10 +47,10 @@ export default class FusoApp extends Component {
       'display-none': !showLogo,
       'clickable-icon': showLogo,
     });
-    const FusoNetworkClassNames = classnames({
-      'fuso-network': showNetwork,
-      'display-none': !showNetwork,
-    });
+    // const FusoNetworkClassNames = classnames({
+    //   'fuso-network': showNetwork,
+    //   'display-none': !showNetwork,
+    // });
     const FusoBannerClassNames = classnames({
       'fuso-banner': showBanner,
       'display-none': !showBanner,
@@ -79,14 +79,14 @@ export default class FusoApp extends Component {
                 onSettingsClick={onSettingsClick}
                 page={page}
               />
-              <Network
+              {/* <Network
                 networks={networks}
                 network={network}
-                // onNetworkClick={onNetworkClick}
+                onNetworkClick={onNetworkClick}
                 onNetworkChange={onNetworkChange}
                 className={FusoNetworkClassNames}
                 page={page}
-              />
+              /> */}
             </div>
           </Header>
           <ViewSelector page={page} />

@@ -92,15 +92,6 @@ export default class Trade extends Component {
                   display: 'flex',
                 }}
               >
-                <ButtonCustom
-                  width="100px"
-                  color="primary"
-                  background="white"
-                  onClick={() => {}}
-                  border="1px solid rgba(65, 72, 93, 0.5);"
-                >
-                  SWAP
-                </ButtonCustom>
                 <ButtonCustom onClick={this.handleDeposit} width="100px">
                   RECEIVE
                 </ButtonCustom>

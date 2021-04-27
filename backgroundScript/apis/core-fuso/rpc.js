@@ -6,7 +6,7 @@ export const fusoRpc = {
       type: 'Vec<(CurrencyTypeEnum, CurrencyTypeEnum, String, String)>',
     },
   },
-  clover: {
+  fuso: {
     getCurrencies: {
       description: 'get currencies',
       params: [],

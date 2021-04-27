@@ -6,9 +6,9 @@ import {
   formatBalance, isHex, hexToU8a, u8aToHex, u8aToString
 } from '@polkadot/util';
 import { mnemonicGenerate } from '@polkadot/util-crypto';
-import _ from 'lodash';
 import { getApi } from '../api';
 import { SUCCESS, FAILURE } from '../../../lib/constants/api';
+import * as ChainApi from '../chain';
 
 export const getAddress = (seedWords, keypairType) => {
   try {
@@ -27,7 +27,7 @@ export const createSeedWords = () => mnemonicGenerate();
 export const valueFormatter = (value, token = 'TAO') => {
   try {
     formatBalance.setDefaults({ unit: token });
-    const fBalance = formatBalance(value, true, 12);
+    const fBalance = formatBalance(value, true, 18);
     return fBalance;
   } catch (err) {
     throw new Error('Error in fuso valueFormatter');
@@ -46,27 +46,24 @@ export const isValidAddress = value => {
 export const getBalance = async address => {
   try {
     const api = getApi();
-    const data = await api.rpc.clover.getBalance(address);
-    const tokens = _.map(data, info => {
-      const token = info[0].type;
-      if (token === 'DOT') {
-        return null;
-      }
-      const balance = info[1].toString();
-      formatBalance.setDefaults({ unit: token });
-      const balanceFormatted = formatBalance(balance, true, 12);
-      const taoBalance = formatBalance(balance, { forceUnit: token, withSi: true }, 12);
-      return {
-        token,
-        balance: balance.toString(),
-        amount: taoBalance.replace(` ${token}`, ''),
-        marketData: '0',
-        balanceFormatted,
-      };
-    });
+    const { data } = await api.query.system.account(address);
+    const balance = data.free.toString();
+    const decimals = ChainApi.getTokenDecimals();
+    const token = ChainApi.getTokenSymbol();
+    formatBalance.setDefaults({ unit: token });
+    const balanceFormatted = formatBalance(balance, true, decimals);
+    const taoBalance = formatBalance(balance, { forceUnit: token, withSi: true }, decimals);
     const balanceObj = {
       address,
-      tokens: _.filter(tokens, t => t),
+      tokens: [
+        {
+          token,
+          balance: balance.toString(),
+          amount: taoBalance.replace(` ${token}`, ''),
+          marketData: '0',
+          balanceFormatted,
+        },
+      ],
       status: SUCCESS,
     };
     return balanceObj;
@@ -79,7 +76,7 @@ export const getBalance = async address => {
           balance: '0',
           amount: '0',
           marketData: '0',
-          balanceFormatted: formatBalance('0', true, 12),
+          balanceFormatted: formatBalance('0', true, 18),
         },
       ],
       status: FAILURE,

@@ -6,7 +6,7 @@ import registry from './type-Registry';
 const femtoUnit = findSi('f');
 const units = SI.filter(x => x.power >= femtoUnit.power);
 const DEFAULT_SS58 = new U32(registry, addressDefaults.prefix);
-const DEFAULT_DECIMALS = new U32(registry, 12);
+const DEFAULT_DECIMALS = new U32(registry, 18);
 
 const Chain = {
   units,

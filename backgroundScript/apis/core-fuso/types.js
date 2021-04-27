@@ -1,4 +1,8 @@
 export const walletTypes = {
+  Address: 'MultiAddress',
+  LookupSource: 'MultiAddress',
+  BlockNumber: 'u32',
+  Signature: 'MultiSignature',
   TokenInfo: {
     total: 'Balance',
     symbol: 'String',
@@ -36,6 +40,6 @@ export const walletTypes = {
     block_number: 'BlockNumber',
     amount: 'Balance',
   },
-  MemberOf: 'Voter',
+  MemberOf: 'Vec<Voter>',
   HostingPair: '(AccountId, AccountId)',
 };
